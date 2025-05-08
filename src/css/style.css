@@ -1,0 +1,666 @@
+/* d:\02-tic\mi-portfolio\src\css\style.css */
+/* ======================================== */
+/* Variables Globales y Temas             */
+/* ======================================== */
+
+/* Reseteo básico y box-sizing para un mejor manejo de dimensiones */
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* Desplazamiento suave para anclas */
+html {
+    scroll-behavior: smooth;
+}
+
+/* ======================================== */
+:root {
+    /* Tema Claro: Pastel con letra negra */
+    --bg-color: #F0F8FF; /* AliceBlue - un azul pastel muy claro */
+    --text-color: #2F4F4F; /* DarkSlateGray - un gris oscuro, casi negro */
+    --primary-color: #4682B4; /* SteelBlue - un azul acero para acentos */
+    --primary-hover-color: #41729F; /* Un SteelBlue un poco más oscuro */
+    --secondary-bg-color: #E6E6FA; /* Lavender - un lila pastel para elementos secundarios */
+    --button-text-color: #FFFFFF; /* Blanco para texto de botones */
+    --border-color: var(--primary-color);
+    --box-shadow-color: rgba(0, 0, 0, 0.08);
+    --nav-toggle-hover-bg: #B0C4DE; /* LightSteelBlue para hover de toggles */
+    --swiper-navigation-sides-offset: 15px;
+    --scroll-padding: 70px; /* Valor de fallback por si JS no establece la variable */
+}
+
+/* Definición de variables para el Modo Oscuro */
+[data-theme="dark"] {
+    /* Tema Oscuro: Azul marino con letra neón verde/amarilla */
+    --bg-color: #000080; /* Navy Blue - Azul Marino */
+    --text-color: #39FF14; /* Neon Green - Verde Neón para texto general */
+    
+    /* Variables generales para el tema oscuro */
+    --primary-color: #FFFF00;     /* Neon Yellow - Para acentos generales, botones, etc. */
+    --button-text-color: #000080; /* Navy Blue - Para el TEXTO sobre elementos con fondo --primary-color */
+    
+    --primary-hover-color: #E6E600; /* Amarillo Neón un poco más oscuro para hover */
+    --secondary-bg-color: #000050; /* Un azul marino más oscuro para elementos secundarios (ej. fondo de tarjeta de proyecto) */
+    --border-color: var(--primary-color); /* Amarillo Neón para bordes generales */
+    --box-shadow-color: rgba(255, 255, 0, 0.2); /* Sombra con tinte amarillo */
+    --nav-toggle-hover-bg: #0000A0; /* Azul marino ligeramente más claro para hover de toggles */
+}
+
+[data-theme="dark"] body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+}
+
+[data-theme="dark"] button,
+[data-theme="dark"] .btn { /* Aplicar también a .btn para consistencia */
+    background-color: var(--primary-color); /* Fondo Amarillo Neón */
+    color: var(--button-text-color);       /* Texto Azul Marino */
+}
+
+[data-theme="dark"] button:hover,
+[data-theme="dark"] .btn:hover {
+    background-color: var(--primary-hover-color);
+}
+
+/* ======================================== */
+/* Barra de Navegación (Navbar)           */
+/* ======================================== */
+#main-nav {
+    background-color: var(--secondary-bg-color);
+    padding: 0.75rem 1.5rem;
+    box-shadow: 0 2px 4px var(--box-shadow-color);
+    transition: background-color 0.3s ease;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    /* Cambios para hacerla pegajosa */
+    position: sticky;
+    top: 0;
+    width: 100%;
+    z-index: 1000; /* Asegurar que esté por encima de otro contenido */
+}
+
+#main-nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    align-items: stretch;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+#main-nav li {
+    margin: 0;
+}
+
+#main-nav a.nav-link {
+    text-decoration: none;
+    color: var(--text-color);
+    font-weight: bold;
+    padding: 0.6em 0.5em;
+    border-radius: 4px;
+    text-align: center;
+    line-height: 1.2;
+    max-width: 110px;
+    display: inline-block;
+    transition: color 0.3s ease, background-color 0.3s ease;
+}
+#main-nav a.nav-link:hover,
+#main-nav a.nav-link:focus {
+    color: var(--button-text-color);
+    background-color: var(--primary-color);
+}
+
+.nav-toggles {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-left: auto;
+}
+
+#main-nav #toggle-theme,
+#main-nav #toggle-language {
+  background-color: transparent;
+  border: 1px solid var(--text-color);
+  color: var(--text-color);
+  padding: 0.5em;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 1.2rem;
+  width: 40px;
+  height: 40px;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+}
+
+#main-nav #toggle-theme:hover,
+#main-nav #toggle-language:hover {
+  background-color: var(--nav-toggle-hover-bg);
+}
+
+/* ======================================== */
+/* Estilos Base                           */
+/* ======================================== */
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-family: 'Nunito', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    line-height: 1.6;
+}
+
+main {
+    margin-left: auto;
+    margin-right: auto;
+    padding: 20px; /* El padding-top se ajustará con JS */
+}
+
+section {
+    padding: 40px 20px;
+    margin-top: 20px; 
+    margin-bottom: 20px;
+    border-radius: 10px; 
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Aplicar scroll-margin-top a las secciones con ID para compensar la barra de navegación fija */
+section[id] {
+    scroll-margin-top: var(--scroll-padding);
+}
+
+
+#projects {
+    max-width: none;
+}
+
+h1, h2, h3 {
+    margin-bottom: 0.75em;
+}
+
+p, li {
+    text-align: justify; 
+    margin-bottom: 1em; 
+}
+
+/* En modo oscuro, los títulos principales de sección también usarán el color de texto neón */
+[data-theme="dark"] h2 {
+    color: var(--text-color); /* Hereda el verde neón del body */
+}
+[data-theme="dark"] #perfil h2 { /* Asegurar que el h2 dentro de perfil también lo tome */
+     color: var(--text-color);
+}
+
+
+/* ======================================== */
+/* Estilos de Componentes                 */
+/* ======================================== */
+button, .btn { 
+    background-color: var(--primary-color);
+    color: var(--button-text-color);
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    text-decoration: none; 
+}
+
+button:hover, .btn:hover {
+    background-color: var(--primary-hover-color);
+}
+
+ul {
+    list-style-position: inside; 
+    padding-left: 0;
+}
+
+#habilidades ul { 
+    list-style: none;
+}
+
+#habilidades li {
+    font-size: 16px;
+    margin-bottom: 12px; 
+    text-align: left; 
+}
+
+.profile-photo {
+    width: 150px; 
+    height: 150px;
+    border-radius: 50%; 
+    border: 4px solid var(--border-color);
+    object-fit: cover;
+    flex-shrink: 0;
+    transition: border-color 0.3s ease;
+    margin-bottom: 15px;
+}
+
+.perfil-container {
+    display: flex;
+    align-items: center; 
+    gap: 30px; 
+    flex-wrap: wrap; 
+    justify-content: center; 
+}
+
+.perfil-text {
+    flex: 1; 
+    min-width: 300px; 
+}
+
+#perfil {
+    background-color: var(--secondary-bg-color);
+    box-shadow: 0px 4px 8px var(--box-shadow-color);
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+#perfil h2 { /* Estilo ya cubierto arriba para modo oscuro */
+    font-size: 22px;
+    color: var(--text-color); 
+    text-align: left; 
+}
+
+#experiencia .experience-item {
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid var(--border-color);
+}
+#experiencia .experience-item:last-child {
+    border-bottom: none;
+}
+#experiencia h3 {
+    font-size: 1.1em;
+    color: var(--primary-color); /* En tema claro, usa el SteelBlue. En oscuro, el Amarillo Neón */
+}
+
+
+#contacto form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px; 
+    max-width: 600px; 
+    margin-left: auto; 
+    margin-right: auto;
+}
+
+#contacto label {
+    font-weight: bold;
+}
+
+#contacto input[type="text"],
+#contacto input[type="email"],
+#contacto textarea {
+    padding: 10px;
+    border: 1px solid var(--border-color); 
+    border-radius: 5px;
+    font-family: inherit; 
+    background-color: var(--bg-color); 
+    color: var(--text-color); 
+}
+
+[data-theme="dark"] #contacto input[type="text"],
+[data-theme="dark"] #contacto input[type="email"],
+[data-theme="dark"] #contacto textarea {
+    background-color: var(--secondary-bg-color); 
+    color: var(--text-color); 
+    border: 1px solid var(--primary-color); 
+}
+
+
+#form-status-messages {
+    margin-top: 15px;
+    text-align: center;
+    min-height: 1.5em; 
+}
+
+.form-message {
+    padding: 10px;
+    border-radius: 5px;
+    font-weight: bold;
+}
+.form-message[data-status="success"] {
+    background-color: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+}
+.form-message[data-status="error"],
+.form-message[data-status="network-error"] {
+    background-color: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+}
+.form-message[data-status="sending"] {
+    background-color: #e2e3e5;
+    color: #383d41;
+    border: 1px solid #d6d8db;
+}
+
+[data-theme="dark"] .form-message[data-status="success"] {
+    background-color: #1B5E20; 
+    color: #A5D6A7; 
+    border: 1px solid #388E3C;
+}
+[data-theme="dark"] .form-message[data-status="error"],
+[data-theme="dark"] .form-message[data-status="network-error"] {
+    background-color: #b71c1c; 
+    color: #ffcdd2; 
+    border: 1px solid #e53935;
+}
+[data-theme="dark"] .form-message[data-status="sending"] {
+    background-color: #000050; 
+    color: #FFFF00; 
+    border: 1px solid #000080;
+}
+
+
+.hidden {
+    display: none !important;
+}
+
+/* ======================================== */
+/* Estilos Responsivos                    */
+/* ======================================== */
+@media (max-width: 768px) {
+    main {
+        padding: 10px; /* El padding-top se ajustará con JS */
+    }
+    section {
+        padding: 20px 10px;
+    }
+
+    button, .btn {
+        padding: 8px 16px; 
+        font-size: 15px;
+    }
+
+    .profile-photo {
+        width: 120px; 
+        height: 120px;
+        margin-left: auto; 
+        margin-right: auto; 
+    }
+
+    .perfil-container {
+        flex-direction: column; 
+        align-items: center; 
+    }
+    .perfil-text {
+        text-align: center; 
+    }
+
+    #perfil h2 {
+        font-size: 20px;
+        text-align: center; 
+    }
+
+    #main-nav {
+        padding: 0.5rem 0.5rem;
+    }
+    #main-nav ul {
+        flex-wrap: nowrap;
+        overflow-x: auto; 
+        justify-content: flex-start;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+        margin-right: 0.5rem;
+    }
+    #main-nav ul::-webkit-scrollbar {
+        display: none;
+    }
+
+    #main-nav li {
+        flex-shrink: 0;
+    }
+     #main-nav a.nav-link {
+        max-width: 100px;
+        font-size: 0.85em;
+        padding: 0.5em 0.4em;
+    }
+    
+    .nav-toggles {
+        margin-left: 0; 
+        flex-shrink: 0; 
+    }
+
+}
+
+@media (max-width: 600px) {
+  #main-nav a.nav-link {
+    font-size: 0.8em; 
+    padding: 0.4em 0.3em; 
+    max-width: 90px;
+  }
+  #main-nav ul { gap: 0.3rem; } 
+
+  .nav-toggles { gap: 0.5rem; }
+  #main-nav #toggle-theme,
+  #main-nav #toggle-language {
+    width: 35px;
+    height: 35px;
+    font-size: 1rem;
+  }
+}
+
+a {
+    color: var(--primary-color); 
+    text-decoration: none; 
+    font-weight: bold;
+    transition: color 0.3s ease; 
+}
+
+a:hover {
+    text-decoration: underline; 
+}
+
+[data-theme="dark"] a {
+    color: var(--primary-color); /* Amarillo Neón para enlaces generales */
+}
+[data-theme="dark"] a:hover {
+    color: var(--primary-hover-color); /* Amarillo Neón más oscuro en hover */
+}
+
+
+/* ======================================== */
+/* Estilos del Carrusel de Proyectos (SwiperJS) */
+/* ======================================== */
+.swiper {
+    width: 100%; 
+    max-width: 850px;
+    padding-top: 50px;  
+    padding-bottom: 50px; 
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.swiper-slide.project {
+    width: 450px;
+    min-height: 420px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    text-align: center;
+    background-color: var(--secondary-bg-color); /* En oscuro: #000050 (azul marino oscuro) */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px var(--box-shadow-color);
+    padding: 15px;
+}
+
+.swiper-slide.project > img {
+    width: 100%; 
+    height: 220px;
+    object-fit: cover;
+    display: block; 
+    border-radius: 8px; 
+    margin-bottom: 15px; 
+    background-color: #ccc;
+}
+
+.video-container.project-video video,
+.video-container.project-video iframe {
+    width: 100%;
+    height: 100%;
+    display: block;
+    border: 0;
+    border-radius: 8px;
+}
+
+
+.project-info {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    flex-grow: 1;
+}
+.project-info p {
+    font-size: 0.9em;
+    text-align: center;
+    margin-bottom: 10px;
+    flex-grow: 1;
+}
+[data-theme="dark"] .project-info p {
+    color: var(--text-color); /* Hereda el verde neón del body */
+}
+
+
+.project-links {
+    margin-top: auto;
+    padding-top: 10px;
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+/* Estilos base para .project-link (aplican en tema claro por defecto) */
+.project-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 12px;
+    background-color: var(--primary-color); /* Tema claro: SteelBlue */
+    color: var(--button-text-color);       /* Tema claro: White */
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 0.85em;
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+    border: 1px solid transparent; /* Borde base para mantener layout consistente */
+}
+
+.project-link:hover {
+    background-color: var(--primary-hover-color);
+    text-decoration: none; 
+}
+
+.swiper-slide.project .project-info .project-links .project-link .icon {
+    font-size: 16px;
+    line-height: 1; 
+}
+
+/* ESTILOS PARA ENLACES DE PROYECTO EN MODO OSCURO: FORZAR ESTILO DE MODO CLARO */
+/* Debido a problemas persistentes con los estilos de modo oscuro, esta sección
+   hará que los enlaces de proyecto se vean como en el modo claro, incluso cuando
+   data-theme="dark" esté activo. */
+
+/* Estado normal del enlace en modo oscuro -> aplicando estilos de modo claro */
+[data-theme="dark"] .swiper-slide.project .project-info .project-links .project-link {
+    background-color: #4682B4 !important;  /* SteelBlue (color primario del tema claro) */
+    color: #FFFFFF !important;             /* Blanco (color de texto de botón del tema claro) */
+    border: 1px solid transparent !important; /* Borde como en tema claro */
+}
+
+/* Hijos (span, icon) en estado normal en modo oscuro -> aplicando color de texto de modo claro */
+[data-theme="dark"] .swiper-slide.project .project-info .project-links .project-link span,
+[data-theme="dark"] .swiper-slide.project .project-info .project-links .project-link .icon {
+    color: #FFFFFF !important; /* Blanco (color de texto de botón del tema claro) */
+}
+
+/* Estado hover del enlace en modo oscuro -> aplicando estilos de hover de modo claro */
+[data-theme="dark"] .swiper-slide.project .project-info .project-links .project-link:hover {
+   background-color: #41729F !important; /* SteelBlue más oscuro (color primario hover del tema claro) */
+   color: #FFFFFF !important;            /* Blanco (color de texto de botón del tema claro) */
+   border-color: transparent !important; 
+   text-decoration: none;
+}
+
+/* Hijos (span, icon) en estado hover en modo oscuro -> aplicando color de texto de modo claro */
+[data-theme="dark"] .swiper-slide.project .project-info .project-links .project-link:hover span,
+[data-theme="dark"] .swiper-slide.project .project-info .project-links .project-link:hover .icon {
+    color: #FFFFFF !important; /* Blanco (color de texto de botón del tema claro) */
+}
+
+/* Asegurar que el icono no tenga fondo propio que interfiera (esto ya estaba y es bueno) */
+[data-theme="dark"] .project-link .icon {
+    background-color: transparent;
+}
+
+
+:root { 
+    --swiper-navigation-color: var(--text-color);
+    --swiper-pagination-color: var(--primary-color); 
+}
+
+[data-theme="dark"] {
+    --swiper-navigation-color: var(--text-color); /* Verde Neón */
+    --swiper-pagination-color: var(--primary-color); /* Amarillo Neón */
+}
+
+.swiper-button-next, .swiper-button-prev {
+    color: var(--swiper-navigation-color);
+    z-index: 20; 
+}
+.swiper-pagination-bullet-active {
+    background: var(--swiper-pagination-color);
+}
+
+.video-container {
+    position: relative;
+    width: 100%;
+    padding-bottom: 56.25%;
+    height: 0;
+    overflow: hidden;
+    margin-bottom: 15px;
+    border-radius: 10px; 
+    background-color: #000; 
+}
+
+.video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0; 
+}
+
+@media (min-width: 1200px) {
+    .swiper {
+        max-width: 1000px;
+    }
+    .swiper-slide.project {
+        width: 500px;
+    }
+}
+
+@media (min-width: 1600px) {
+    .swiper {
+        max-width: 1100px;
+    }
+    .swiper-slide.project {
+        width: 550px;
+    }
+}

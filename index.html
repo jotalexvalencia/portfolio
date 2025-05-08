@@ -1,0 +1,652 @@
+<!DOCTYPE html>
+<html lang="es">
+<!-- El atributo lang="es" indica que el idioma principal del documento es español -->
+
+<head>
+  <meta charset="UTF-8">
+  <link
+    rel="icon"
+    type="image/svg+xml"
+    href="/public/images/favicon.ico"
+  >
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+  <title>Portafolio - Jorge Alexander Valencia</title>
+
+  <!-- Google Fonts - Nunito -->
+  <link
+    rel="preconnect"
+    href="https://fonts.googleapis.com"
+  >
+  <link
+    rel="preconnect"
+    href="https://fonts.gstatic.com"
+    crossorigin
+  >
+  <link
+    href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap"
+    rel="stylesheet"
+  >
+
+  <!-- Font Awesome CDN -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  />
+
+  <!-- Enlace a la hoja de estilos CSS -->
+  <link
+    rel="stylesheet"
+    href="/src/css/style.css"
+  >
+  <!-- Enlace al CSS de SwiperJS (CDN) -->
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+  />
+  <!-- Fin de la sección Head -->
+</head>
+
+<body>
+  <!-- El header ha sido eliminado -->
+
+  <!-- Barra de Navegación Principal -->
+  <nav id="main-nav">
+    <ul>
+      <li>
+        <a
+          href="#perfil"
+          class="es nav-link"
+        >Sobre Mí</a>
+        <a
+          href="#perfil"
+          class="en hidden nav-link"
+        >About Me</a>
+      </li>
+      <li>
+        <a
+          href="#experiencia"
+          class="es nav-link"
+        >Experiencia</a>
+        <a
+          href="#experiencia"
+          class="en hidden nav-link"
+        >Experience</a>
+      </li>
+      <li>
+        <a
+          href="#projects"
+          class="es nav-link"
+        >Proyectos</a>
+        <a
+          href="#projects"
+          class="en hidden nav-link"
+        >Projects</a>
+      </li>
+      <li>
+        <a
+          href="#contacto"
+          class="es nav-link"
+        >Contacto</a>
+        <a
+          href="#contacto"
+          class="en hidden nav-link"
+        >Contact</a>
+      </li>
+    </ul>
+    <!-- Contenedor para los botones de tema e idioma -->
+    <div class="nav-toggles">
+      <button id="toggle-theme">🌙</button>
+      <button id="toggle-language">EN</button>
+    </div>
+  </nav>
+
+  <main>
+    <section id="perfil">
+      <div class="perfil-container"> <!-- Contenedor para imagen y texto -->
+        <img
+          src="/public/images/foto.png"
+          alt="Jorge Alexander Valencia"
+          class="profile-photo"
+        >
+        <div class="perfil-text">
+          <h2 class="es">Sobre mí</h2>
+          <h2 class="en hidden">About Me</h2>
+
+          <p class="es">
+            Soy Jorge Alexander Valencia, Desarrollador Full-Stack con más de 9 años de experiencia en TI.
+            Certificado en Scrum, Ingeniería de Requisitos y nivel de inglés B2 (Upper Intermediate).
+            Apasionado por el desarrollo web y móvil, actualmente perfeccionando React Native, Angular y tecnologías en
+            la
+            nube.
+          </p>
+          <p class="en hidden">
+            I'm Jorge Alexander Valencia, a Full-Stack Developer with over 9 years of experience in IT.
+            Certified in Scrum, Requirement Engineering, and English (B2 Upper Intermediate).
+            Passionate about web and mobile development, currently mastering React Native, Angular, and cloud-based
+            technologies.
+          </p>
+        </div>
+      </div>
+    </section> <!-- Fin de la sección Sobre mí -->
+
+    <!-- Sección de Experiencia Profesional -->
+    <section id="experiencia">
+      <h2 class="es">Experiencia</h2>
+      <h2 class="en hidden">Experience</h2>
+      <div class="experience-item">
+        <h3 class="es">Freelance Developer | (2023 - Presente)</h3>
+        <h3 class="en hidden">Freelance Developer | (2023 - Present)</h3>
+        <p class="es">Desarrollo de APIs y dashboards con ASP.NET Core y Angular.</p>
+        <p class="en hidden">Development of APIs and dashboards with ASP.NET Core and Angular.</p>
+      </div>
+      <div class="experience-item">
+        <h3 class="es">Ingeniero de Apoyo | La Ofrenda S.A. | (2022 - 2023)</h3>
+        <h3 class="en hidden">Support Engineer | La Ofrenda S.A. | (2022 - 2023)</h3>
+        <p class="es">Desarrollo de aplicaciones internas con WinForms y Oracle.</p>
+        <p class="en hidden">Development of internal applications using WinForms and Oracle.</p>
+      </div>
+      <p class="es"><i>(Más detalles sobre mi experiencia en mi CV...)</i></p>
+      <p class="en hidden"><i>(More details about my experience in my Resume...)</i></p>
+    </section> <!-- Fin de la sección Experiencia -->
+
+    <!-- Sección de habilidades -->
+    <section id="habilidades">
+      <h2 class="es">Habilidades</h2>
+      <h2 class="en hidden">Skills</h2>
+      <ul>
+        <li class="es">Lenguajes de Programación: Python, JavaScript, SQL</li>
+        <li class="en hidden">Programming Languages: Python, JavaScript, SQL</li>
+        <li class="es">Frameworks: Angular, React Native, ASP.NET Core</li>
+        <li class="en hidden">Frameworks: Angular, React Native, ASP.NET Core</li>
+        <li class="es">Bases de datos: PostgreSQL, SQL Server, Oracle</li>
+        <li class="en hidden">Databases: PostgreSQL, SQL Server, Oracle</li>
+        <li class="es">Herramientas: Git, VS Code, AWS Cloud9</li>
+        <li class="en hidden">Tools: Git, VS Code, AWS Cloud9</li>
+      </ul>
+    </section> <!-- Fin de la sección Habilidades -->
+
+    <section id="cv">
+      <h2 class="es">Hoja de Vida</h2>
+      <h2 class="en hidden">Resume</h2>
+      <a
+        href="/public/pdf/cv_es.pdf"
+        download
+        class="btn es"
+      >📄 Descargar CV en Español</a>
+      <a
+        href="/public/pdf/cv_en.pdf"
+        download
+        class="btn en hidden"
+      >📄 Download Resume in English</a>
+    </section> <!-- Fin de la sección Hoja de Vida / CV -->
+
+    <!-- Sección Proyectos con SwiperJS -->
+    <section id="projects">
+      <h2 class="es">Proyectos</h2>
+      <h2 class="en hidden">Projects</h2>
+      <div class="swiper mySwiper">
+        <div class="swiper-wrapper">
+          <!-- Slide 1 (Proyecto Ejemplo con Imagen y Enlaces) -->
+          <div class="swiper-slide project">
+            <img
+              src="/public/images/proyecto1.png"
+              alt="Proyecto Limpieza de Datos"
+            >
+            <div class="project-info">
+              <p class="es">Limpieza de Datos con Python: eliminación de *outliers* con la metodología IQR.</p>
+              <p class="en hidden">Data Cleaning with Python: Removing *outliers* using the IQR method.</p>
+              <div class="project-links">
+                <a
+                  href="https://github.com/jotalexvalencia/limpieza-datos-python-pandas"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="project-link"
+                >
+                  <i class="fab fa-github icon"></i>
+                  <span class="es">Ver en GitHub</span>
+                  <span class="en hidden">View on GitHub</span>
+                </a>
+                <!-- Si este proyecto tiene un demo en video -->
+                <!-- <a href="URL_VIDEO_YOUTUBE_PROYECTO_1" target="_blank" rel="noopener noreferrer" class="project-link">
+                  <i class="fas fa-play icon"></i>
+                  <span class="es">Ver Demo</span>
+                  <span class="en hidden">View Demo</span>
+                </a> -->
+              </div>
+            </div>
+          </div>
+
+          <!-- Slide 2 (Proyecto Ejemplo con Imagen y Enlaces) -->
+          <div class="swiper-slide project">
+            <img
+              src="/public/images/proyecto2.png"
+              alt="Proyecto Todo-JS"
+            >
+            <div class="project-info">
+              <p class="es">Todo-JS: Lista de tareas con almacenamiento en LocalStorage.</p>
+              <p class="en hidden">Todo-JS: Task list with persistent LocalStorage.</p>
+              <div class="project-links">
+                <a
+                  href="https://github.com/jotalexvalencia/todo-js"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="project-link"
+                >
+                  <i class="fab fa-github icon"></i>
+                  <span class="es">Ver en GitHub</span>
+                  <span class="en hidden">View on GitHub</span>
+                </a>
+                <a
+                  href="URL_VIDEO_YOUTUBE_PROYECTO_2"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="project-link"
+                >
+                  <i class="fas fa-play icon"></i>
+                  <span class="es">Ver Demo</span>
+                  <span class="en hidden">View Demo</span>
+                </a>
+                <a
+                  href="https://todo-list-alex-js.netlify.app/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="project-link"
+                >
+                  <i class="fas fa-external-link-alt icon"></i>
+                  <span class="es">Ver Sitio</span>
+                  <span class="en hidden">View Site</span>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Slide 3 (Proyecto Ejemplo con Imagen y Enlaces) -->
+          <div class="swiper-slide project">
+            <img
+              src="/public/images/proyecto3.png"
+              alt="Proyecto Spotify Clone"
+            >
+            <div class="project-info">
+              <p class="es">React Native Spotify Mini Clone: Aplicación de reproducción de música.</p>
+              <p class="en hidden">React Native Spotify Mini Clone: Music playback app.</p>
+              <div class="project-links">
+                <a
+                  href="https://github.com/jotalexvalencia/ReactNativeSpotifyminiclone"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="project-link"
+                >
+                  <i class="fab fa-github icon"></i>
+                  <span class="es">Ver en GitHub</span>
+                  <span class="en hidden">View on GitHub</span>
+                </a>
+                <a
+                  href="https://youtu.be/QefQUe5J1Ls"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="project-link"
+                >
+                  <i class="fas fa-play icon"></i>
+                  <span class="es">Ver Demo en YouTube</span>
+                  <span class="en hidden">View Demo on YouTube</span>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Slide 4 (Proyecto) -->
+          <div class="swiper-slide project">
+            <img
+              src="/public/images/proyecto4.png"
+              alt="Proyecto 4"
+            >
+            <div class="project-info">
+              <p class="es">Sistema de Gestión de Ventas (Frontend): Dashboard interactivo en Angular.</p>
+              <p class="en hidden">Sales Management System (Frontend): Interactive dashboard in Angular.</p>
+              <div class="project-links">
+                <a
+                  href="https://github.com/jotalexvalencia/APPSISTEMAVENTA"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="project-link"
+                >
+                  <i class="fab fa-github icon"></i>
+                  <span class="es">Ver en GitHub</span>
+                  <span class="en hidden">View on GitHub</span>
+                </a>
+                <a
+                  href="https://www.youtube.com/watch?v=HdM63BH0ssI"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="project-link"
+                >
+                  <i class="fas fa-play icon"></i>
+                  <span class="es">Ver Demo</span>
+                  <span class="en hidden">View Demo</span>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Slide 5 (Proyecto) -->
+          <div class="swiper-slide project">
+            <img
+              src="/public/images/proyecto5.png"
+              alt="Proyecto 5"
+            >
+            <div class="project-info">
+              <p class="es">Sistema de Gestión de Ventas (Backend): API RESTful con manejo de roles.</p>
+              <p class="en hidden">Sales Management System (Backend): RESTful API with role management.</p>
+              <div class="project-links">
+                <a
+                  href="https://github.com/jotalexvalencia/APISistemaVenta"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="project-link"
+                >
+                  <i class="fab fa-github icon"></i>
+                  <span class="es">Ver en GitHub</span>
+                  <span class="en hidden">View on GitHub</span>
+                </a>
+                <a
+                  href="https://www.youtube.com/watch?v=HdM63BH0ssI"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="project-link"
+                >
+                  <i class="fas fa-play icon"></i>
+                  <span class="es">Ver Demo</span>
+                  <span class="en hidden">View Demo</span>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Proyectos Adicionales Comentados (6-15) -->
+          <!--
+          <div class="swiper-slide project">
+            <img src="/public/images/proyecto6.png" alt="Proyecto 6">
+            <div class="project-info">
+              <p class="es">Descripción del Proyecto 6 en español.</p>
+              <p class="en hidden">Description of Project 6 in English.</p>
+              <div class="project-links">
+                <a href="URL_GITHUB_PROYECTO_6" target="_blank" rel="noopener noreferrer" class="project-link">
+                  <i class="fab fa-github icon"></i>
+                  <span class="es">Ver en GitHub</span>
+                  <span class="en hidden">View on GitHub</span>
+                </a>
+                <a href="URL_VIDEO_YOUTUBE_PROYECTO_6" target="_blank" rel="noopener noreferrer" class="project-link">
+                  <i class="fas fa-play icon"></i>
+                  <span class="es">Ver Demo</span>
+                  <span class="en hidden">View Demo</span>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div class="swiper-slide project">
+            <img src="/public/images/proyecto7.png" alt="Proyecto 7">
+            <div class="project-info">
+              <p class="es">Descripción del Proyecto 7 en español.</p>
+              <p class="en hidden">Description of Project 7 in English.</p>
+              <div class="project-links">
+                <a href="URL_GITHUB_PROYECTO_7" target="_blank" rel="noopener noreferrer" class="project-link">
+                  <i class="fab fa-github icon"></i>
+                  <span class="es">Ver en GitHub</span>
+                  <span class="en hidden">View on GitHub</span>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div class="swiper-slide project">
+            <img src="/public/images/proyecto8.png" alt="Proyecto 8">
+            <div class="project-info">
+              <p class="es">Descripción del Proyecto 8 en español.</p>
+              <p class="en hidden">Description of Project 8 in English.</p>
+              <div class="project-links">
+                <a href="URL_GITHUB_PROYECTO_8" target="_blank" rel="noopener noreferrer" class="project-link">
+                  <i class="fab fa-github icon"></i>
+                  <span class="es">Ver en GitHub</span>
+                  <span class="en hidden">View on GitHub</span>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div class="swiper-slide project">
+            <img src="/public/images/proyecto9.png" alt="Proyecto 9">
+            <div class="project-info">
+              <p class="es">Descripción del Proyecto 9 en español.</p>
+              <p class="en hidden">Description of Project 9 in English.</p>
+              <div class="project-links">
+                <a href="URL_GITHUB_PROYECTO_9" target="_blank" rel="noopener noreferrer" class="project-link">
+                  <i class="fab fa-github icon"></i>
+                  <span class="es">Ver en GitHub</span>
+                  <span class="en hidden">View on GitHub</span>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div class="swiper-slide project">
+            <img src="/public/images/proyecto10.png" alt="Proyecto 10">
+            <div class="project-info">
+              <p class="es">Descripción del Proyecto 10 en español.</p>
+              <p class="en hidden">Description of Project 10 in English.</p>
+              <div class="project-links">
+                <a href="URL_GITHUB_PROYECTO_10" target="_blank" rel="noopener noreferrer" class="project-link">
+                  <i class="fab fa-github icon"></i>
+                  <span class="es">Ver en GitHub</span>
+                  <span class="en hidden">View on GitHub</span>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div class="swiper-slide project">
+            <img src="/public/images/proyecto11.png" alt="Proyecto 11">
+            <div class="project-info">
+              <p class="es">Descripción del Proyecto 11 en español.</p>
+              <p class="en hidden">Description of Project 11 in English.</p>
+              <div class="project-links">
+                <a href="URL_GITHUB_PROYECTO_11" target="_blank" rel="noopener noreferrer" class="project-link">
+                  <i class="fab fa-github icon"></i>
+                  <span class="es">Ver en GitHub</span>
+                  <span class="en hidden">View on GitHub</span>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div class="swiper-slide project">
+            <img src="/public/images/proyecto12.png" alt="Proyecto 12">
+            <div class="project-info">
+              <p class="es">Descripción del Proyecto 12 en español.</p>
+              <p class="en hidden">Description of Project 12 in English.</p>
+              <div class="project-links">
+                <a href="URL_GITHUB_PROYECTO_12" target="_blank" rel="noopener noreferrer" class="project-link">
+                  <i class="fab fa-github icon"></i>
+                  <span class="es">Ver en GitHub</span>
+                  <span class="en hidden">View on GitHub</span>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div class="swiper-slide project">
+            <img src="/public/images/proyecto13.png" alt="Proyecto 13">
+            <div class="project-info">
+              <p class="es">Descripción del Proyecto 13 en español.</p>
+              <p class="en hidden">Description of Project 13 in English.</p>
+              <div class="project-links">
+                <a href="URL_GITHUB_PROYECTO_13" target="_blank" rel="noopener noreferrer" class="project-link">
+                  <i class="fab fa-github icon"></i>
+                  <span class="es">Ver en GitHub</span>
+                  <span class="en hidden">View on GitHub</span>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div class="swiper-slide project">
+            <img src="/public/images/proyecto14.png" alt="Proyecto 14">
+            <div class="project-info">
+              <p class="es">Descripción del Proyecto 14 en español.</p>
+              <p class="en hidden">Description of Project 14 in English.</p>
+              <div class="project-links">
+                <a href="URL_GITHUB_PROYECTO_14" target="_blank" rel="noopener noreferrer" class="project-link">
+                  <i class="fab fa-github icon"></i>
+                  <span class="es">Ver en GitHub</span>
+                  <span class="en hidden">View on GitHub</span>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div class="swiper-slide project">
+            <img src="/public/images/proyecto15.png" alt="Proyecto 15">
+            <div class="project-info">
+              <p class="es">Descripción del Proyecto 15 en español.</p>
+              <p class="en hidden">Description of Project 15 in English.</p>
+              <div class="project-links">
+                <a href="URL_GITHUB_PROYECTO_15" target="_blank" rel="noopener noreferrer" class="project-link">
+                  <i class="fab fa-github icon"></i>
+                  <span class="es">Ver en GitHub</span>
+                  <span class="en hidden">View on GitHub</span>
+                </a>
+              </div>
+            </div>
+          </div>
+          -->
+
+        </div>
+        <!-- Paginación (opcional, bolitas indicadoras) -->
+        <div class="swiper-pagination"></div>
+        <!-- Botones de Navegación (opcional, flechas) -->
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+      </div>
+    </section> <!-- Fin de la sección Proyectos -->
+
+    <!-- Sección de Contacto -->
+    <section id="contacto">
+      <h2 class="es">Contacto</h2>
+      <h2 class="en hidden">Contact</h2>
+      <form
+        method="POST"
+        id="contact-form"
+        name="contact-form"
+        data-netlify="true"
+        data-netlify-honeypot="bot-field"
+      >
+        <input
+          type="hidden"
+          name="form-name"
+          value="contact-form"
+        >
+        <p class="hidden">
+          <label>No llenar este campo si eres humano: <input name="bot-field"></label>
+        </p>
+        <label
+          for="contact-name"
+          class="es"
+        >Nombre:</label>
+        <label
+          for="contact-name"
+          class="en hidden "
+        >Name:</label>
+        <input
+          type="text"
+          id="contact-name"
+          name="name"
+          required
+        >
+        <label
+          for="contact-email"
+          class="es"
+        >Correo:</label>
+        <label
+          for="contact-email"
+          class="en hidden"
+        >Email:</label>
+        <input
+          type="email"
+          id="contact-email"
+          name="email"
+          required
+        >
+        <label
+          for="contact-message"
+          class="es"
+        >Mensaje:</label>
+        <label
+          for="contact-message"
+          class="en hidden"
+        >Message:</label>
+        <textarea
+          id="contact-message"
+          name="message"
+          required
+        ></textarea>
+        <button
+          type="submit"
+          class="es"
+        >Enviar</button>
+        <button
+          type="submit"
+          class="en hidden"
+        >Send</button>
+      </form>
+      <div
+        id="form-status-messages"
+        role="status"
+        aria-live="polite"
+      >
+        <p
+          class="form-message es hidden"
+          data-status="sending"
+        >Enviando...</p>
+        <p
+          class="form-message en hidden"
+          data-status="sending"
+        >Sending...</p>
+        <p
+          class="form-message es hidden"
+          data-status="success"
+        >¡Mensaje enviado con éxito!</p>
+        <p
+          class="form-message en hidden"
+          data-status="success"
+        >Message sent successfully!</p>
+        <p
+          class="form-message es hidden"
+          data-status="error"
+        >Hubo un problema al enviar el mensaje. Inténtalo de nuevo.</p>
+        <p
+          class="form-message en hidden"
+          data-status="error"
+        >There was a problem sending your message. Please try again.</p>
+        <p
+          class="form-message es hidden"
+          data-status="network-error"
+        >Error de red. Inténtalo de nuevo.</p>
+        <p
+          class="form-message en hidden"
+          data-status="network-error"
+        >Network error. Please try again.</p>
+      </div>
+    </section> <!-- Fin de la sección Contacto -->
+  </main> <!-- Fin del contenido principal -->
+
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script src="/src/js/main.js"></script>
+</body>
+
+</html>
