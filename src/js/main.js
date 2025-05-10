@@ -16,6 +16,20 @@ document.addEventListener('DOMContentLoaded', () => {
   const EN_CLASS = 'en';
   const HIDDEN_CLASS = 'hidden';
 
+  function adjustMainContentPadding() {
+    if (mainNav && mainElement) {
+      const navHeight = mainNav.offsetHeight;
+      mainElement.style.paddingTop = `${navHeight}px`;
+      // Añadimos un offset de 20px para que los títulos de sección queden un poco más arriba al navegar
+      // Este valor es usado por scroll-margin-top en el CSS
+      document.documentElement.style.setProperty('--scroll-padding', `${navHeight + 20}px`);
+    }
+  }
+
+  // Llamada inicial MUY TEMPRANA para ajustar el padding antes de que todo cargue y evitar saltos.
+  // Esto es crucial porque la barra de navegación es 'fixed'.
+  adjustMainContentPadding();
+
   function applyTheme(theme) {
     currentTheme = theme;
     document.documentElement.setAttribute('data-theme', theme);
@@ -23,17 +37,9 @@ document.addEventListener('DOMContentLoaded', () => {
       toggleThemeButton.innerHTML = theme === 'dark' ? sunIcon : moonIcon;
     }
     localStorage.setItem('theme', theme);
-    adjustMainContentPadding();
+    // No es necesario llamar a adjustMainContentPadding aquí si la altura de la nav no cambia con el tema
   }
 
-  function adjustMainContentPadding() {
-    if (mainNav && mainElement) {
-      const navHeight = mainNav.offsetHeight;
-      mainElement.style.paddingTop = `${navHeight}px`;
-      // Añadimos un offset de 20px para que los títulos de sección queden un poco más arriba al navegar
-      document.documentElement.style.setProperty('--scroll-padding', `${navHeight + 20}px`);
-    }
-  }
 
   function applyLanguage(lang) {
     document.querySelectorAll(`.${ES_CLASS}, .${EN_CLASS}`).forEach(el => {
@@ -47,7 +53,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     document.documentElement.lang = lang;
     localStorage.setItem('language', lang);
-    adjustMainContentPadding(); // Asegurarse de ajustar el padding también al cambiar idioma
+    // No es necesario llamar a adjustMainContentPadding aquí si la altura de la nav no cambia con el idioma
   }
 
   if (toggleThemeButton) {
@@ -65,14 +71,25 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // Llamada inicial para ajustar el padding
-  adjustMainContentPadding();
   // Ajustar el padding en cada redimensionamiento de la ventana
   window.addEventListener('resize', adjustMainContentPadding);
 
   // Aplicar tema e idioma guardados al cargar la página
   applyTheme(currentTheme);
   applyLanguage(currentLanguage);
+
+  // Scroll inicial a #perfil si no hay hash en la URL, después de un breve delay para asegurar que todo esté renderizado
+  // y el padding de la barra de navegación se haya aplicado.
+  if (!window.location.hash) {
+    setTimeout(() => {
+      const perfilSection = document.getElementById('perfil');
+      if (perfilSection) {
+        // Usamos scrollIntoView con el offset ya manejado por scroll-margin-top
+        perfilSection.scrollIntoView({ behavior: 'smooth' });
+      }
+    }, 100); // Un pequeño delay puede ayudar
+  }
+
 
   // Lógica para scroll suave de la barra de navegación en móviles
   const navList = document.querySelector('#main-nav ul');
@@ -83,9 +100,12 @@ document.addEventListener('DOMContentLoaded', () => {
       // Comprueba si la lista de navegación es más ancha que su contenedor (indica scroll)
       if (navList && navList.scrollWidth > navList.clientWidth) {
         // Desplaza el elemento clickeado a la vista
+        // 'nearest' asegura que si el elemento ya es visible, no scrollea innecesariamente.
+        // 'center' intenta centrar el elemento horizontalmente.
         this.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
       }
       // La navegación a la sección se maneja por el href y el scroll-margin-top del CSS
+      // No es necesario event.preventDefault() si los href son correctos (#id-seccion)
     });
   });
 
