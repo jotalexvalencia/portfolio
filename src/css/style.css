@@ -8,15 +8,15 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-}
-
-/* Desplazamiento suave para anclas */
-html {
+  }
+  
+  /* Desplazamiento suave para anclas */
+  html {
     scroll-behavior: smooth;
-}
-
-/* ======================================== */
-:root {
+  }
+  
+  /* ======================================== */
+  :root {
     /* Tema Claro: Pastel con letra negra */
     --bg-color: #F0F8FF; /* AliceBlue - un azul pastel muy claro */
     --text-color: #2F4F4F; /* DarkSlateGray - un gris oscuro, casi negro */
@@ -27,47 +27,45 @@ html {
     --border-color: var(--primary-color);
     --box-shadow-color: rgba(0, 0, 0, 0.08);
     --nav-toggle-hover-bg: #B0C4DE; /* LightSteelBlue para hover de toggles */
-    --swiper-navigation-sides-offset: 15px;
+    /* --swiper-navigation-sides-offset: 15px; -- Comentado, se define en .swiper o media queries */
     --scroll-padding: 70px; /* Valor de fallback por si JS no establece la variable */
-}
-
-/* Definición de variables para el Modo Oscuro */
-[data-theme="dark"] {
+  }
+  
+  /* Definición de variables para el Modo Oscuro */
+  [data-theme="dark"] {
     /* Tema Oscuro: Azul marino con letra neón verde/amarilla */
     --bg-color: #000080; /* Navy Blue - Azul Marino */
     --text-color: #39FF14; /* Neon Green - Verde Neón para texto general */
-    
-    /* Variables generales para el tema oscuro */
-    --primary-color: #FFFF00;     /* Neon Yellow - Para acentos generales, botones, etc. */
-    --button-text-color: #000080; /* Navy Blue - Para el TEXTO sobre elementos con fondo --primary-color */
-    
-    --primary-hover-color: #E6E600; /* Amarillo Neón un poco más oscuro para hover */
-    --secondary-bg-color: #000050; /* Un azul marino más oscuro para elementos secundarios (ej. fondo de tarjeta de proyecto) */
-    --border-color: var(--primary-color); /* Amarillo Neón para bordes generales */
-    --box-shadow-color: rgba(255, 255, 0, 0.2); /* Sombra con tinte amarillo */
-    --nav-toggle-hover-bg: #0000A0; /* Azul marino ligeramente más claro para hover de toggles */
-}
-
-[data-theme="dark"] body {
+    --primary-color: #FFFF00; /* Neon Yellow - Amarillo Neón para acentos */
+    --primary-hover-color: #CCCC00; /* Un Amarillo Neón un poco más oscuro */
+    --secondary-bg-color: #000050; /* Un azul marino más oscuro para elementos secundarios */
+    --button-text-color: #000080; /* Azul Marino para texto de botones (contraste con amarillo) */
+    --border-color: var(--primary-color);
+    --box-shadow-color: rgba(255, 255, 255, 0.08); /* Sombra clara para modo oscuro */
+    --nav-toggle-hover-bg: #0000CD; /* MediumBlue para hover de toggles */
+  }
+  
+  [data-theme="dark"] body {
     background-color: var(--bg-color);
     color: var(--text-color);
-}
-
-[data-theme="dark"] button,
-[data-theme="dark"] .btn { /* Aplicar también a .btn para consistencia */
+  }
+  
+  [data-theme="dark"] button,
+  [data-theme="dark"] .btn { /* Aplicar también a .btn para consistencia */
     background-color: var(--primary-color); /* Fondo Amarillo Neón */
-    color: var(--button-text-color);       /* Texto Azul Marino */
-}
-
-[data-theme="dark"] button:hover,
-[data-theme="dark"] .btn:hover {
+    color: var(--button-text-color); /* Texto Azul Marino */
+  }
+  
+  [data-theme="dark"] button:hover,
+  [data-theme="dark"] .btn:hover {
     background-color: var(--primary-hover-color);
-}
-
-/* ======================================== */
-/* Barra de Navegación (Navbar)           */
-/* ======================================== */
-#main-nav {
+  }
+  
+  
+  /* ======================================== */
+  /* Barra de Navegación (Navbar)           */
+  /* ======================================== */
+  #main-nav {
     background-color: var(--secondary-bg-color);
     padding: 0.75rem 1.5rem;
     box-shadow: 0 2px 4px var(--box-shadow-color);
@@ -81,17 +79,16 @@ html {
     top: 0;
     width: 100%;
     z-index: 1000; /* Asegurar que esté por encima de otro contenido */
-}
-
-/* Ajuste para que los toggles no bajen en pantallas medianas/pequeñas */
-@media (max-width: 768px) {
-  #main-nav {
-    flex-wrap: nowrap; /* Evita que los elementos internos (ul, div.nav-toggles) se envuelvan */
   }
-}
-
-
-#main-nav ul {
+  
+  /* Ajuste para que los toggles no bajen en pantallas medianas/pequeñas */
+  @media (max-width: 768px) {
+    #main-nav {
+      flex-wrap: nowrap; /* Evita que los elementos internos (ul, div.nav-toggles) se envuelvan */
+    }
+  }
+  
+  #main-nav ul {
     list-style: none;
     padding: 0;
     margin: 0;
@@ -105,13 +102,13 @@ html {
     min-width: 0; /* Necesario para que overflow-x funcione bien con flex-grow */
     overflow-x: auto; /* Scroll horizontal si los links no caben */
     justify-content: center; /* Centra los links si caben, sino permite scroll desde la izquierda */
-}
-
-#main-nav li {
+  }
+  
+  #main-nav li {
     margin: 0;
-}
-
-#main-nav a.nav-link {
+  }
+  
+  #main-nav a.nav-link {
     text-decoration: none;
     color: var(--text-color);
     font-weight: bold;
@@ -122,110 +119,110 @@ html {
     max-width: 110px;
     display: inline-block;
     transition: color 0.3s ease, background-color 0.3s ease;
-}
-#main-nav a.nav-link:hover,
-#main-nav a.nav-link:focus {
+  }
+  #main-nav a.nav-link:hover,
+  #main-nav a.nav-link:focus {
     color: var(--button-text-color);
     background-color: var(--primary-color);
-}
-
-.nav-toggles {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem; /* Reducido ligeramente para ahorrar espacio */
-  margin-left: auto; /* Mantiene los toggles a la derecha */
-  flex-shrink: 0; /* Evita que los toggles se encojan */
-}
-
-#main-nav #toggle-theme,
-#main-nav #toggle-language {
-  background-color: transparent;
-  border: 1px solid var(--text-color);
-  color: var(--text-color);
-  padding: 0.5em;
-  border-radius: 50%;
-  cursor: pointer;
-  font-size: 1.2rem;
-  width: 40px;
-  height: 40px;
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
-  transition: background-color 0.3s, color 0.3s, border-color 0.3s;
-}
-
-#main-nav #toggle-theme:hover,
-#main-nav #toggle-language:hover {
-  background-color: var(--nav-toggle-hover-bg);
-}
-
-/* ======================================== */
-/* Estilos Base                           */
-/* ======================================== */
-body {
+  }
+  
+  .nav-toggles {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem; /* Reducido ligeramente para ahorrar espacio */
+    margin-left: auto; /* Mantiene los toggles a la derecha */
+    flex-shrink: 0; /* Evita que los toggles se encojan */
+  }
+  
+  #main-nav #toggle-theme,
+  #main-nav #toggle-language {
+    background-color: transparent;
+    border: 1px solid var(--text-color);
+    color: var(--text-color);
+    padding: 0.5em;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 1.2rem;
+    width: 40px;
+    height: 40px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+  }
+  
+  #main-nav #toggle-theme:hover,
+  #main-nav #toggle-language:hover {
+    background-color: var(--nav-toggle-hover-bg);
+  }
+  
+  /* ======================================== */
+  /* Estilos Base                           */
+  /* ======================================== */
+  body {
     background-color: var(--bg-color);
     color: var(--text-color);
     font-family: 'Nunito', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     transition: background-color 0.3s ease, color 0.3s ease;
     line-height: 1.6;
-}
-
-main {
+  }
+  
+  main {
     margin-left: auto;
     margin-right: auto;
     padding: 20px; /* El padding-top se ajustará con JS */
-}
-
-section {
+  }
+  
+  section {
     padding: 40px 20px;
-    margin-top: 20px; 
+    margin-top: 20px;
     margin-bottom: 20px;
-    border-radius: 10px; 
+    border-radius: 10px;
     max-width: 900px; /* Max-width para el contenido de la sección */
     margin-left: auto;
     margin-right: auto;
-}
-
-/* Nueva clase para estilizar secciones específicas */
-.section-styled {
+  }
+  
+  /* Nueva clase para estilizar secciones específicas */
+  .section-styled {
     background-color: var(--secondary-bg-color);
     box-shadow: 0px 4px 8px var(--box-shadow-color);
     transition: background-color 0.3s ease, box-shadow 0.3s ease;
-}
-
-/* Aplicar scroll-margin-top a las secciones con ID para compensar la barra de navegación fija */
-section[id] {
+  }
+  
+  /* Aplicar scroll-margin-top a las secciones con ID para compensar la barra de navegación fija */
+  section[id] {
     /* El valor de --scroll-padding ahora incluye un offset adicional desde JS */
     scroll-margin-top: var(--scroll-padding);
-}
-
-
-#projects { /* La sección projects puede necesitar un max-width diferente si el carrusel es más ancho */
+  }
+  
+  #projects {
+    /* La sección projects puede necesitar un max-width diferente si el carrusel es más ancho */
     max-width: none; /* Permitir que el carrusel use su propio max-width */
-}
-
-h1, h2, h3 {
+  }
+  
+  h1, h2, h3 {
     margin-bottom: 0.75em;
-}
-
-p, li {
-    text-align: justify; 
-    margin-bottom: 1em; 
-}
-
-/* En modo oscuro, los títulos principales de sección también usarán el color de texto neón */
-[data-theme="dark"] h2 {
+  }
+  
+  p, li {
+    text-align: justify;
+    margin-bottom: 1em;
+  }
+  
+  /* En modo oscuro, los títulos principales de sección también usarán el color de texto neón */
+  [data-theme="dark"] h2 {
     color: var(--text-color); /* Hereda el verde neón del body */
-}
-[data-theme="dark"] #perfil h2 { /* Asegurar que el h2 dentro de perfil también lo tome */
-     color: var(--text-color);
-}
-
-
-/* ======================================== */
-/* Estilos de Componentes                 */
-/* ======================================== */
-button, .btn { 
+  }
+  [data-theme="dark"] #perfil h2 { /* Asegurar que el h2 dentro de perfil también lo tome */
+    color: var(--text-color);
+  }
+  
+  
+  /* ======================================== */
+  /* Estilos de Componentes                 */
+  /* ======================================== */
+  button, .btn {
     background-color: var(--primary-color);
     color: var(--button-text-color);
     padding: 10px 20px;
@@ -234,296 +231,261 @@ button, .btn {
     border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s ease, color 0.3s ease;
-    text-decoration: none; 
-}
-
-button:hover, .btn:hover {
+    text-decoration: none;
+  }
+  
+  button:hover, .btn:hover {
     background-color: var(--primary-hover-color);
-}
-
-ul {
-    list-style-position: inside; 
+  }
+  
+  ul {
+    list-style-position: inside;
     padding-left: 0;
-}
-
-#habilidades ul { 
+  }
+  
+  #habilidades ul {
     list-style: none;
-}
-
-#habilidades li {
+  }
+  
+  #habilidades li {
     font-size: 16px;
-    margin-bottom: 12px; 
-    text-align: left; 
-}
-
-.profile-photo {
-    width: 150px; 
+    margin-bottom: 12px;
+    text-align: left;
+  }
+  
+  .profile-photo {
+    width: 150px;
     height: 150px;
-    border-radius: 50%; 
+    border-radius: 50%;
     border: 4px solid var(--border-color);
     object-fit: cover;
     flex-shrink: 0;
     transition: border-color 0.3s ease;
     margin-bottom: 15px;
-}
-
-.perfil-container {
+  }
+  
+  .perfil-container {
     display: flex;
-    align-items: center; 
-    gap: 30px; 
-    flex-wrap: wrap; 
-    justify-content: center; 
-}
-
-#perfil { /* Esta sección ya tiene su propio fondo y sombra, no necesita .section-styled */
+    align-items: center;
+    gap: 30px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  #perfil { /* Esta sección ya tiene su propio fondo y sombra, no necesita .section-styled */
     background-color: var(--secondary-bg-color);
     box-shadow: 0px 4px 8px var(--box-shadow-color);
     transition: background-color 0.3s ease, box-shadow 0.3s ease;
-}
-
-#perfil h2 {
-    color: var(--text-color); 
-    text-align: left; 
-}
-
-.perfil-text {
-    flex: 1; 
-    min-width: 300px; 
+  }
+  
+  #perfil h2 {
+    color: var(--text-color);
+    text-align: left;
+  }
+  
+  .perfil-text {
+    flex: 1;
+    min-width: 300px;
     font-size: 1rem; /* Asegurar un tamaño base para el texto de perfil */
-}
-
-#experiencia .experience-item {
+  }
+  
+  
+  #experiencia .experience-item {
     margin-bottom: 20px;
     padding-bottom: 15px;
     border-bottom: 1px solid var(--border-color);
-}
-#experiencia .experience-item:last-child {
+  }
+  #experiencia .experience-item:last-child {
     border-bottom: none;
-}
-#experiencia h3 {
+  }
+  #experiencia h3 {
     font-size: 1.1em;
     color: var(--primary-color); /* En tema claro, usa el SteelBlue. En oscuro, el Amarillo Neón */
-}
-
-
-#contacto form { /* Si tuvieras un formulario */
+  }
+  
+  #contacto form { /* Si tuvieras un formulario */
     display: flex;
     flex-direction: column;
-    gap: 15px; 
-    max-width: 600px; 
-    margin-left: auto; 
-    margin-right: auto;
-}
-
-#contacto label {
-    font-weight: bold;
-}
-
-#contacto input[type="text"],
-#contacto input[type="email"],
-#contacto textarea {
-    padding: 10px;
-    border: 1px solid var(--border-color); 
-    border-radius: 5px;
-    font-family: inherit; 
-    background-color: var(--bg-color); 
-    color: var(--text-color); 
-}
-
-[data-theme="dark"] #contacto input[type="text"],
-[data-theme="dark"] #contacto input[type="email"],
-[data-theme="dark"] #contacto textarea {
-    background-color: var(--secondary-bg-color); 
-    color: var(--text-color); 
-    border: 1px solid var(--primary-color); 
-}
-
-
-.hidden {
-    display: none !important;
-}
-
-/* ======================================== */
-/* Estilos Responsivos                    */
-/* ======================================== */
-@media (max-width: 768px) { /* Tablets y móviles grandes en vertical */
-    main {
-        padding: 10px;
-    }
-    section {
-        padding: 20px 10px;
-    }
-
-    button, .btn {
-        padding: 8px 16px; 
-        font-size: 15px;
-    }
-
-    .profile-photo {
-        width: 100px; /* Reducido para móviles */
-        height: 100px; /* Reducido para móviles */
-        margin-left: auto; 
-        margin-right: auto; 
-    }
-
-    .perfil-container {
-        flex-direction: column;
-        align-items: center; 
-    }
-    .perfil-text {
-        text-align: center; 
-    }
-
-    #perfil h2 {
-        text-align: center; 
-    }
-
-    #main-nav {
-        padding: 0.5rem 0.5rem;
-        flex-wrap: nowrap; /* Asegurar que los toggles no bajen */
-    }
-    #main-nav ul {
-        flex-wrap: nowrap; /* Los links no se envuelven, usan scroll horizontal */
-        overflow-x: auto; 
-        justify-content: flex-start; /* Alinea los links al inicio para el scroll */
-        -webkit-overflow-scrolling: touch; /* Scroll suave en iOS */
-        scrollbar-width: none; /* Ocultar scrollbar en Firefox */
-        margin-right: 0.3rem; /* Espacio entre lista de links y toggles */
-    }
-    #main-nav ul::-webkit-scrollbar { /* Ocultar scrollbar en Chrome/Safari */
-        display: none;
-    }
-
-    #main-nav li {
-        flex-shrink: 0; /* Evita que los items de la lista se encojan */
-    }
-     #main-nav a.nav-link {
-        max-width: 95px; /* Ligeramente reducido */
-        font-size: 0.85em;
-        padding: 0.5em 0.4em;
-    }
-    
-    .nav-toggles {
-        margin-left: auto; /* Mantiene los toggles a la derecha */
-        flex-shrink: 0; 
-    }
-}
-
-@media (max-width: 600px) { /* Smartphones en vertical */
-  #main-nav a.nav-link {
-    font-size: 0.78em; /* Ligeramente más pequeño */
-    padding: 0.4em 0.3em; 
-    max-width: 85px; /* Ligeramente más pequeño */
-  }
-  #main-nav ul { gap: 0.2rem; } /* Espacio entre links reducido */
-
-  .nav-toggles { gap: 0.3rem; } /* Espacio entre toggles reducido */
-  #main-nav #toggle-theme,
-  #main-nav #toggle-language {
-    width: 35px;
-    height: 35px;
-    font-size: 1rem;
-  }
-
-  /* Ajustes para el carrusel de proyectos en móviles verticales */
-  section#projects h2 { /* Título de la sección Proyectos */
-    margin-bottom: 10px; /* Menor espacio debajo del título */
-    text-align: center;
-    font-size: 1.3em; /* Tamaño del título de sección */
-  }
-
-  .swiper {
-    padding-top: 10px; /* Reducir espacio superior del carrusel */
-    padding-bottom: 30px; /* Reducir espacio inferior del carrusel */
-    --swiper-navigation-size: 30px; /* Tamaño de los botones de navegación (flechas) */
-    --swiper-navigation-sides-offset: 5px; /* Espacio de las flechas a los lados */
-  }
-
-  .swiper-button-next::after, .swiper-button-prev::after {
-    font-size: 16px; /* Icono de flecha más pequeño */
-  }
-
-  .swiper-slide.project {
-    min-height: auto; /* Permitir que la altura del slide se ajuste al contenido */
-    padding: 10px; /* Reducir el padding interno del slide */
-    width: 280px !important; /* Ancho fijo más pequeño para slides en vertical, !important para sobreescribir Swiper */
-  }
-
-  .swiper-slide.project > img {
-    height: 140px; /* Altura reducida para la imagen del proyecto */
-    margin-bottom: 8px; /* Menor margen inferior para la imagen */
-    object-fit: cover; /* Asegura que la imagen cubra el espacio sin distorsionarse */
-  }
-
-  .project-info p { /* Descripción del proyecto */
-    font-size: 0.75em; /* Texto de descripción del proyecto más pequeño */
-    margin-bottom: 8px; /* Menor margen inferior para la descripción */
-    line-height: 1.3;
-    display: -webkit-box; /* Truncar texto a X líneas */
-    -webkit-line-clamp: 3; /* Número de líneas a mostrar */
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    min-height: calc(0.75em * 1.3 * 3); /* Altura mínima para 3 líneas */
-    text-align: center; /* Centrar texto de descripción */
-  }
-
-  .project-links {
-    padding-top: 5px; /* Reducir espacio sobre los botones de links */
-    gap: 6px; /* Espacio entre los botones de link */
-  }
-
-  .project-link {
-    font-size: 0.7em; /* Texto de los botones de link más pequeño */
-    padding: 5px 7px; /* Padding reducido para los botones de link */
-    gap: 3px; /* Espacio reducido entre icono y texto en el botón */
-  }
-
-  .swiper-slide.project .project-info .project-links .project-link .icon {
-    font-size: 12px; /* Icono más pequeño en el botón de link */
-  }
-
-  .swiper-pagination { /* Paginación (bolitas) */
-    bottom: 3px !important; /* Acercar la paginación al borde inferior del carrusel */
-  }
-  .swiper-pagination-bullet {
-    width: 5px; /* Bolitas de paginación más pequeñas */
-    height: 5px;
-  }
-}
-
-a {
-    color: var(--primary-color); 
-    text-decoration: none; 
-    font-weight: bold;
-    transition: color 0.3s ease; 
-}
-
-a:hover {
-    text-decoration: underline; 
-}
-
-[data-theme="dark"] a {
-    color: var(--primary-color); /* Amarillo Neón para enlaces generales */
-}
-[data-theme="dark"] a:hover {
-    color: var(--primary-hover-color); /* Amarillo Neón más oscuro en hover */
-}
-
-
-/* ======================================== */
-/* Estilos del Carrusel de Proyectos (SwiperJS) */
-/* ======================================== */
-.swiper {
-    width: 100%; 
-    max-width: 850px; /* Max-width para el carrusel en pantallas grandes */
-    padding-top: 50px;  
-    padding-bottom: 50px; 
+    gap: 15px;
+    max-width: 600px;
     margin-left: auto;
     margin-right: auto;
-}
-
-.swiper-slide.project {
+  }
+  
+  #contacto label {
+    font-weight: bold;
+  }
+  
+  #contacto input[type="text"],
+  #contacto input[type="email"],
+  #contacto textarea {
+    padding: 10px;
+    border: 1px solid var(--border-color);
+    border-radius: 5px;
+    font-family: inherit;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+  }
+  
+  [data-theme="dark"] #contacto input[type="text"],
+  [data-theme="dark"] #contacto input[type="email"],
+  [data-theme="dark"] #contacto textarea {
+    background-color: var(--secondary-bg-color);
+    color: var(--text-color);
+    border: 1px solid var(--primary-color);
+  }
+  
+  .hidden {
+    display: none !important;
+  }
+  
+  /* ======================================== */
+  /* Estilos Responsivos                    */
+  /* ======================================== */
+  @media (max-width: 768px) { /* Tablets y móviles grandes en vertical */
+    main {
+      padding: 10px;
+    }
+    section {
+      padding: 20px 10px;
+    }
+  
+    .perfil-container {
+      flex-direction: column;
+      text-align: center;
+    }
+    #perfil h2 {
+      text-align: center;
+    }
+    .profile-photo {
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+  
+  @media (max-width: 600px) { /* Smartphones en vertical */
+    #main-nav a.nav-link {
+      font-size: 0.78em; /* Ligeramente más pequeño */
+      padding: 0.4em 0.3em;
+      max-width: 85px; /* Ligeramente más pequeño */
+    }
+    #main-nav ul {
+      gap: 0.2rem;
+    } /* Espacio entre links reducido */
+  
+    .nav-toggles {
+      gap: 0.3rem;
+    } /* Espacio entre toggles reducido */
+    #main-nav #toggle-theme,
+    #main-nav #toggle-language {
+      width: 35px;
+      height: 35px;
+      font-size: 1rem;
+    }
+  
+    /* Ajustes para el carrusel de proyectos en móviles verticales */
+    section#projects h2 { /* Título de la sección Proyectos */
+      margin-bottom: 10px; /* Menor espacio debajo del título */
+      text-align: center;
+      font-size: 1.3em; /* Tamaño del título de sección */
+    }
+  
+    .swiper {
+      padding-top: 10px; /* Reducir espacio superior del carrusel */
+      padding-bottom: 30px; /* Reducir espacio inferior del carrusel */
+      --swiper-navigation-size: 30px; /* Tamaño de los botones de navegación (flechas) */
+      --swiper-navigation-sides-offset: 5px; /* Espacio de las flechas a los lados */
+    }
+  
+    .swiper-button-next::after,
+    .swiper-button-prev::after {
+      font-size: 16px; /* Icono de flecha más pequeño */
+    }
+  
+    .swiper-slide.project {
+      min-height: auto; /* Permitir que la altura del slide se ajuste al contenido */
+      padding: 10px; /* Reducir el padding interno del slide */
+      width: 280px !important; /* Ancho fijo más pequeño para slides en vertical, !important para sobreescribir Swiper */
+    }
+  
+    .swiper-slide.project > img {
+      height: 140px; /* Altura reducida para la imagen del proyecto */
+      margin-bottom: 8px; /* Menor margen inferior para la imagen */
+      object-fit: cover; /* Asegura que la imagen cubra el espacio sin distorsionarse */
+    }
+  
+    .project-info p { /* Descripción del proyecto */
+      font-size: 0.75em; /* Texto de descripción del proyecto más pequeño */
+      margin-bottom: 8px; /* Menor margen inferior para la descripción */
+      line-height: 1.3;
+      display: -webkit-box; /* Truncar texto a X líneas */
+      -webkit-line-clamp: 3; /* Número de líneas a mostrar */
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      min-height: calc(0.75em * 1.3 * 3); /* Altura mínima para 3 líneas */
+      text-align: center; /* Centrar texto de descripción */
+    }
+  
+    .project-links {
+      padding-top: 5px; /* Reducir espacio sobre los botones de links */
+      gap: 6px; /* Espacio entre los botones de link */
+    }
+  
+    .project-link {
+      font-size: 0.7em; /* Texto de los botones de link más pequeño */
+      padding: 5px 7px; /* Padding reducido para los botones de link */
+      gap: 3px; /* Espacio reducido entre icono y texto en el botón */
+    }
+  
+    .swiper-slide.project .project-info .project-links .project-link .icon {
+      font-size: 12px; /* Icono más pequeño en el botón de link */
+    }
+  
+    .swiper-pagination { /* Paginación (bolitas) */
+      bottom: 3px !important; /* Acercar la paginación al borde inferior del carrusel */
+    }
+    .swiper-pagination-bullet {
+      width: 5px; /* Bolitas de paginación más pequeñas */
+      height: 5px;
+    }
+  }
+  
+  a {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+  }
+  
+  a:hover {
+    text-decoration: underline;
+  }
+  
+  [data-theme="dark"] a {
+    color: var(--primary-color); /* Amarillo Neón para enlaces generales */
+  }
+  [data-theme="dark"] a:hover {
+    color: var(--primary-hover-color); /* Amarillo Neón más oscuro en hover */
+  }
+  
+  /* ======================================== */
+  /* Estilos del Carrusel de Proyectos (SwiperJS) */
+  /* ======================================== */
+  .swiper {
+    width: 100%;
+    max-width: 850px; /* Max-width para el carrusel en pantallas grandes */
+    padding-top: 50px;
+    padding-bottom: 50px;
+    margin-left: auto;
+    margin-right: auto;
+    /* Valores por defecto para pantallas grandes (desktop) */
+    /* Swiper utiliza estas variables para el tamaño y posición de las flechas de navegación. */
+    --swiper-navigation-size: 40px; /* Tamaño base de los botones/flechas. Puedes ajustar este valor. */
+    --swiper-navigation-sides-offset: 15px; /* Distancia de los botones a los lados del carrusel. */
+  }
+  
+  .swiper-slide.project {
     width: 450px; /* Ancho por defecto de cada slide */
     min-height: 420px; /* Altura mínima por defecto */
     display: flex;
@@ -535,38 +497,37 @@ a:hover {
     border-radius: 10px;
     box-shadow: 0 4px 8px var(--box-shadow-color);
     padding: 15px;
-}
-
-.swiper-slide.project > img {
-    width: 100%; 
+  }
+  
+  .swiper-slide.project > img {
+    width: 100%;
     height: 220px;
     object-fit: cover;
-    display: block; 
-    border-radius: 8px; 
-    margin-bottom: 15px; 
+    display: block;
+    border-radius: 8px;
+    margin-bottom: 15px;
     background-color: #ccc; /* Fallback por si la imagen no carga */
-}
-
-.project-info {
+  }
+  
+  .project-info {
     width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-between; /* Para empujar los links hacia abajo */
     flex-grow: 1; /* Para que ocupe el espacio restante */
-}
-.project-info p {
+  }
+  .project-info p {
     font-size: 0.9em;
     text-align: center;
     margin-bottom: 10px;
     flex-grow: 1; /* Permite que el párrafo crezca si hay espacio */
-}
-[data-theme="dark"] .project-info p {
+  }
+  [data-theme="dark"] .project-info p {
     color: var(--text-color); /* Hereda el verde neón del body */
-}
-
-
-.project-links {
+  }
+  
+  .project-links {
     margin-top: auto; /* Empuja los links hacia abajo si el párrafo no ocupa todo el espacio */
     padding-top: 10px;
     display: flex;
@@ -574,142 +535,149 @@ a:hover {
     justify-content: center;
     flex-wrap: wrap;
     width: 100%;
-}
-
-/* Estilos base para .project-link (aplican en tema claro por defecto) */
-.project-link {
+  }
+  
+  /* Estilos base para .project-link (aplican en tema claro por defecto) */
+  .project-link {
     display: inline-flex;
     align-items: center;
     gap: 8px;
     padding: 8px 12px;
     background-color: var(--primary-color); /* Tema claro: SteelBlue */
-    color: var(--button-text-color);       /* Tema claro: White */
+    color: var(--button-text-color); /* Tema claro: White */
     border-radius: 5px;
     text-decoration: none;
     font-weight: bold;
     font-size: 0.85em;
     transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
     border: 1px solid transparent; /* Borde base para mantener layout consistente */
-}
-
-.project-link:hover {
+  }
+  
+  .project-link:hover {
     background-color: var(--primary-hover-color);
-    text-decoration: none; 
-}
-
-.swiper-slide.project .project-info .project-links .project-link .icon {
+    text-decoration: none;
+  }
+  
+  .swiper-slide.project .project-info .project-links .project-link .icon {
     font-size: 16px;
-    line-height: 1; 
-}
-
-/* ESTILOS PARA ENLACES DE PROYECTO EN MODO OSCURO: FORZAR ESTILO DE MODO CLARO */
-[data-theme="dark"] .swiper-slide.project .project-info .project-links .project-link {
-    background-color: #4682B4 !important;  /* SteelBlue (color primario del tema claro) */
-    color: #FFFFFF !important;             /* Blanco (color de texto de botón del tema claro) */
-    border: 1px solid transparent !important; 
-}
-[data-theme="dark"] .swiper-slide.project .project-info .project-links .project-link span,
-[data-theme="dark"] .swiper-slide.project .project-info .project-links .project-link .icon {
-    color: #FFFFFF !important; 
-}
-[data-theme="dark"] .swiper-slide.project .project-info .project-links .project-link:hover {
-   background-color: #41729F !important; /* SteelBlue más oscuro (color primario hover del tema claro) */
-   color: #FFFFFF !important;            
-   border-color: transparent !important; 
-   text-decoration: none;
-}
-[data-theme="dark"] .swiper-slide.project .project-info .project-links .project-link:hover span,
-[data-theme="dark"] .swiper-slide.project .project-info .project-links .project-link:hover .icon {
-    color: #FFFFFF !important; 
-}
-[data-theme="dark"] .project-link .icon {
+    line-height: 1;
+  }
+  
+  /* ESTILOS PARA ENLACES DE PROYECTO EN MODO OSCURO: FORZAR ESTILO DE MODO CLARO */
+  [data-theme="dark"] .swiper-slide.project .project-info .project-links .project-link {
+    background-color: #4682B4 !important; /* SteelBlue (color primario del tema claro) */
+    color: #FFFFFF !important; /* Blanco (color de texto de botón del tema claro) */
+    border: 1px solid transparent !important;
+  }
+  [data-theme="dark"] .swiper-slide.project .project-info .project-links .project-link span,
+  [data-theme="dark"] .swiper-slide.project .project-info .project-links .project-link .icon {
+    color: #FFFFFF !important;
+  }
+  [data-theme="dark"] .swiper-slide.project .project-info .project-links .project-link:hover {
+    background-color: #41729F !important; /* SteelBlue más oscuro (color primario hover del tema claro) */
+    color: #FFFFFF !important;
+    border-color: transparent !important;
+    text-decoration: none;
+  }
+  [data-theme="dark"] .swiper-slide.project .project-info .project-links .project-link:hover span,
+  [data-theme="dark"] .swiper-slide.project .project-info .project-links .project-link:hover .icon {
+    color: #FFFFFF !important;
+  }
+  [data-theme="dark"] .project-link .icon {
     background-color: transparent;
-}
-
-
-:root { 
+  }
+  
+  
+  :root {
     --swiper-navigation-color: var(--text-color);
-    --swiper-pagination-color: var(--primary-color); 
-}
-
-[data-theme="dark"] {
+    --swiper-pagination-color: var(--primary-color);
+  }
+  
+  [data-theme="dark"] {
     --swiper-navigation-color: var(--text-color); /* Verde Neón */
     --swiper-pagination-color: var(--primary-color); /* Amarillo Neón */
-}
-
-.swiper-button-next, .swiper-button-prev {
+  }
+  
+  .swiper-button-next,
+  .swiper-button-prev {
     color: var(--swiper-navigation-color);
-    z-index: 20; 
-}
-.swiper-pagination-bullet-active {
+    z-index: 20;
+  }
+  /* Estilo para los iconos de flecha (pseudo-elementos ::after) */
+  .swiper-button-next::after,
+  .swiper-button-prev::after {
+    /* Por defecto, Swiper usa --swiper-navigation-size para el font-size de los iconos de flecha. */
+    /* Este valor base se aplicará en pantallas grandes. */
+    /* Tus media queries ya especifican otros font-size para ::after en pantallas más pequeñas, lo cual está bien. */
+    font-size: var(--swiper-navigation-size); /* Si quieres un tamaño de icono diferente al del botón, puedes poner un valor fijo aquí. */
+  }
+  
+  .swiper-pagination-bullet-active {
     background: var(--swiper-pagination-color);
-}
-
-
-@media (min-width: 1200px) { /* Pantallas grandes */
+  }
+  
+  
+  @media (min-width: 1200px) { /* Pantallas grandes */
     .swiper {
-        max-width: 1000px;
+      max-width: 1000px;
     }
     .swiper-slide.project {
-        width: 500px !important; /* !important para sobreescribir Swiper */
+      width: 500px !important; /* !important para sobreescribir Swiper */
     }
-}
-
-@media (min-width: 1600px) { /* Pantallas muy grandes */
+  }
+  
+  @media (min-width: 1600px) { /* Pantallas muy grandes */
     .swiper {
-        max-width: 1100px;
+      max-width: 1100px;
     }
     .swiper-slide.project {
-        width: 550px !important; /* !important para sobreescribir Swiper */
+      width: 550px !important; /* !important para sobreescribir Swiper */
     }
-}
-
-/* Media Query para móviles en horizontal */
-@media (max-width: 900px) and (max-height: 500px) and (orientation: landscape) {
+  }
+  
+  /* Media Query para móviles en horizontal */
+  @media (max-width: 900px) and (max-height: 500px) and (orientation: landscape) {
     section#projects h2 {
-        margin-bottom: 5px;
-        font-size: 1.2em; /* Título de sección un poco más pequeño */
-        text-align: center;
+      margin-bottom: 5px;
+      font-size: 1.2em; /* Título de sección un poco más pequeño */
+      text-align: center;
     }
     .swiper {
-        padding-top: 5px;
-        padding-bottom: 20px;
-        --swiper-navigation-size: 28px;
+      padding-top: 5px;
+      padding-bottom: 20px;
+      --swiper-navigation-size: 28px;
+      /* --swiper-navigation-sides-offset: aquí heredará el valor de .swiper (15px) o puedes especificar uno. */
     }
-    .swiper-button-next::after, .swiper-button-prev::after {
-        font-size: 14px;
+    .swiper-button-next::after,
+    .swiper-button-prev::after {
+      font-size: 14px;
     }
-
+  
     .swiper-slide.project {
-        width: 300px !important; /* Ancho del slide en horizontal, !important para sobreescribir Swiper */
-        min-height: auto; /* Altura se ajusta al contenido */
-        padding: 8px;
+      width: 320px !important; /* Ajustar ancho para horizontal */
+      min-height: auto; /* Altura se ajusta al contenido */
+      padding: 8px;
     }
     .swiper-slide.project > img {
-        height: 100px; /* Imagen más pequeña en horizontal */
-        margin-bottom: 5px;
-        object-fit: cover;
+      height: 120px; /* Imagen más pequeña */
+      margin-bottom: 5px;
     }
-    .project-info p { /* Descripción del proyecto */
-        font-size: 0.7em;
-        -webkit-line-clamp: 2; /* Mostrar solo 2 líneas */
-        min-height: calc(0.7em * 1.3 * 2); /* Altura mínima para 2 líneas */
-        margin-bottom: 5px;
-        text-align: center;
+    .project-info p {
+      font-size: 0.7em;
+      margin-bottom: 5px;
+      -webkit-line-clamp: 2; /* Menos líneas de texto */
+      min-height: calc(0.7em * 1.3 * 2);
     }
     .project-links {
-        gap: 5px;
-        padding-top: 3px;
+      padding-top: 3px;
+      gap: 5px;
     }
     .project-link {
-        font-size: 0.65em;
-        padding: 4px 6px;
+      font-size: 0.65em;
+      padding: 4px 6px;
     }
     .swiper-pagination {
-        bottom: 1px !important;
+      bottom: 1px !important;
     }
-    .swiper-pagination-bullet {
-        width: 4px;
-        height: 4px;
-    }
-}
+  }
+  
