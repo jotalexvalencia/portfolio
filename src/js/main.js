@@ -15,7 +15,6 @@ document.addEventListener('DOMContentLoaded', () => {
   const ES_CLASS = 'es';
   const EN_CLASS = 'en';
   const HIDDEN_CLASS = 'hidden';
-  // const FORM_MESSAGE_CLASS = 'form-message'; // Ya no se necesita
 
   function applyTheme(theme) {
     currentTheme = theme;
@@ -31,7 +30,8 @@ document.addEventListener('DOMContentLoaded', () => {
     if (mainNav && mainElement) {
       const navHeight = mainNav.offsetHeight;
       mainElement.style.paddingTop = `${navHeight}px`;
-      document.documentElement.style.setProperty('--scroll-padding', `${navHeight}px`);
+      // Añadimos un offset de 20px para que los títulos de sección queden un poco más arriba al navegar
+      document.documentElement.style.setProperty('--scroll-padding', `${navHeight + 20}px`);
     }
   }
 
@@ -40,7 +40,6 @@ document.addEventListener('DOMContentLoaded', () => {
       el.classList.add(HIDDEN_CLASS);
     });
     document.querySelectorAll(`.${lang}`).forEach(el => {
-      // Ya no necesitamos la condición de form-message
       el.classList.remove(HIDDEN_CLASS);
     });
     if (toggleLanguageButton) {
@@ -48,7 +47,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     document.documentElement.lang = lang;
     localStorage.setItem('language', lang);
-    adjustMainContentPadding();
+    adjustMainContentPadding(); // Asegurarse de ajustar el padding también al cambiar idioma
   }
 
   if (toggleThemeButton) {
@@ -62,33 +61,41 @@ document.addEventListener('DOMContentLoaded', () => {
     toggleLanguageButton.addEventListener('click', () => {
       const newLanguage = currentLanguage === ES_CLASS ? EN_CLASS : ES_CLASS;
       applyLanguage(newLanguage);
-      currentLanguage = newLanguage;
+      currentLanguage = newLanguage; // Actualizar currentLanguage después de aplicar
     });
   }
 
+  // Llamada inicial para ajustar el padding
   adjustMainContentPadding();
+  // Ajustar el padding en cada redimensionamiento de la ventana
   window.addEventListener('resize', adjustMainContentPadding);
 
+  // Aplicar tema e idioma guardados al cargar la página
   applyTheme(currentTheme);
   applyLanguage(currentLanguage);
 
+  // Lógica para scroll suave de la barra de navegación en móviles
   const navList = document.querySelector('#main-nav ul');
   const navLinks = document.querySelectorAll('#main-nav a.nav-link');
 
   navLinks.forEach(link => {
     link.addEventListener('click', function (event) {
+      // Comprueba si la lista de navegación es más ancha que su contenedor (indica scroll)
       if (navList && navList.scrollWidth > navList.clientWidth) {
+        // Desplaza el elemento clickeado a la vista
         this.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
       }
+      // La navegación a la sección se maneja por el href y el scroll-margin-top del CSS
     });
   });
 
+  // Inicialización de SwiperJS
   if (typeof Swiper !== 'undefined') {
     const swiper = new Swiper(".mySwiper", {
       effect: "coverflow",
       grabCursor: true,
       centeredSlides: true,
-      slidesPerView: "auto",
+      slidesPerView: "auto", // Permite que Swiper determine cuántos slides mostrar
       coverflowEffect: {
         rotate: 50,
         stretch: 0,
@@ -114,7 +121,5 @@ document.addEventListener('DOMContentLoaded', () => {
   } else {
     console.warn('Swiper library not loaded.');
   }
-
-  // La lógica del formulario de contacto ha sido eliminada.
 
 });

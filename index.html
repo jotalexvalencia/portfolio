@@ -107,7 +107,7 @@
   </nav>
 
   <main>
-    <section id="perfil">
+    <section id="perfil"> <!-- Ya tiene estilos específicos, no necesita .section-styled -->
       <div class="perfil-container"> <!-- Contenedor para imagen y texto -->
         <img
           src="/images/foto.png"
@@ -136,7 +136,10 @@
     </section> <!-- Fin de la sección Sobre mí -->
 
     <!-- Sección de Experiencia Profesional -->
-    <section id="experiencia">
+    <section
+      id="experiencia"
+      class="section-styled"
+    >
       <h2 class="es">Experiencia</h2>
       <h2 class="en hidden">Experience</h2>
       <div class="experience-item">
@@ -156,7 +159,10 @@
     </section> <!-- Fin de la sección Experiencia -->
 
     <!-- Sección de habilidades -->
-    <section id="habilidades">
+    <section
+      id="habilidades"
+      class="section-styled"
+    >
       <h2 class="es">Habilidades</h2>
       <h2 class="en hidden">Skills</h2>
       <ul>
@@ -171,23 +177,29 @@
       </ul>
     </section> <!-- Fin de la sección Habilidades -->
 
-    <section id="cv">
+    <section
+      id="cv"
+      class="section-styled"
+    >
       <h2 class="es">Hoja de Vida</h2>
       <h2 class="en hidden">Resume</h2>
       <a
         href="/pdf/cv_es.pdf"
         download
         class="btn es"
-      >📄 Descargar CV en Español</a>
+      >📄 Descargar CV</a>
       <a
         href="/pdf/cv_en.pdf"
         download
         class="btn en hidden"
-      >📄 Download Resume in English</a>
+      >📄 Download Resume</a>
     </section> <!-- Fin de la sección Hoja de Vida / CV -->
 
     <!-- Sección Proyectos con SwiperJS -->
-    <section id="projects">
+    <section
+      id="projects"
+      class="section-styled"
+    >
       <h2 class="es">Proyectos</h2>
       <h2 class="en hidden">Projects</h2>
       <div class="swiper mySwiper">
@@ -209,14 +221,14 @@
                   class="project-link"
                 >
                   <i class="fab fa-github icon"></i>
-                  <span class="es">Ver en GitHub</span>
-                  <span class="en hidden">View on GitHub</span>
+                  <span class="es">GitHub</span>
+                  <span class="en hidden">GitHub</span>
                 </a>
                 <!-- Si este proyecto tiene un demo en video -->
                 <!-- <a href="URL_VIDEO_YOUTUBE_PROYECTO_1" target="_blank" rel="noopener noreferrer" class="project-link">
                   <i class="fas fa-play icon"></i>
-                  <span class="es">Ver Demo</span>
-                  <span class="en hidden">View Demo</span>
+                  <span class="es">Demo</span>
+                  <span class="en hidden">Demo</span>
                 </a> -->
               </div>
             </div>
@@ -239,18 +251,19 @@
                   class="project-link"
                 >
                   <i class="fab fa-github icon"></i>
-                  <span class="es">Ver en GitHub</span>
-                  <span class="en hidden">View on GitHub</span>
+                  <span class="es">GitHub</span>
+                  <span class="en hidden">GitHub</span>
                 </a>
                 <a
                   href="URL_VIDEO_YOUTUBE_PROYECTO_2"
                   target="_blank"
                   rel="noopener noreferrer"
                   class="project-link"
+                  title="Ver Demo del Proyecto 2"
                 >
                   <i class="fas fa-play icon"></i>
-                  <span class="es">Ver Demo</span>
-                  <span class="en hidden">View Demo</span>
+                  <span class="es">Demo</span>
+                  <span class="en hidden">Demo</span>
                 </a>
                 <a
                   href="https://todo-list-alex-js.netlify.app/"
@@ -259,8 +272,8 @@
                   class="project-link"
                 >
                   <i class="fas fa-external-link-alt icon"></i>
-                  <span class="es">Ver Sitio</span>
-                  <span class="en hidden">View Site</span>
+                  <span class="es">Sitio</span>
+                  <span class="en hidden">Site</span>
                 </a>
               </div>
             </div>
@@ -283,8 +296,8 @@
                   class="project-link"
                 >
                   <i class="fab fa-github icon"></i>
-                  <span class="es">Ver en GitHub</span>
-                  <span class="en hidden">View on GitHub</span>
+                  <span class="es">GitHub</span>
+                  <span class="en hidden">GitHub</span>
                 </a>
                 <a
                   href="https://youtu.be/QefQUe5J1Ls"
@@ -293,8 +306,8 @@
                   class="project-link"
                 >
                   <i class="fas fa-play icon"></i>
-                  <span class="es">Ver Demo en YouTube</span>
-                  <span class="en hidden">View Demo on YouTube</span>
+                  <span class="es">YouTube</span>
+                  <span class="en hidden">YouTube</span>
                 </a>
               </div>
             </div>
@@ -304,7 +317,7 @@
           <div class="swiper-slide project">
             <img
               src="/images/proyecto4.png"
-              alt="Proyecto 4"
+              alt="Proyecto Sistema de Ventas Frontend"
             >
             <div class="project-info">
               <p class="es">Sistema de Gestión de Ventas (Frontend): Dashboard interactivo en Angular.</p>
@@ -317,8 +330,8 @@
                   class="project-link"
                 >
                   <i class="fab fa-github icon"></i>
-                  <span class="es">Ver en GitHub</span>
-                  <span class="en hidden">View on GitHub</span>
+                  <span class="es">GitHub</span>
+                  <span class="en hidden">GitHub</span>
                 </a>
                 <a
                   href="https://www.youtube.com/watch?v=HdM63BH0ssI"
@@ -327,8 +340,8 @@
                   class="project-link"
                 >
                   <i class="fas fa-play icon"></i>
-                  <span class="es">Ver Demo</span>
-                  <span class="en hidden">View Demo</span>
+                  <span class="es">Demo</span>
+                  <span class="en hidden">Demo</span>
                 </a>
               </div>
             </div>
@@ -338,7 +351,7 @@
           <div class="swiper-slide project">
             <img
               src="/images/proyecto5.png"
-              alt="Proyecto 5"
+              alt="Proyecto Sistema de Ventas Backend"
             >
             <div class="project-info">
               <p class="es">Sistema de Gestión de Ventas (Backend): API RESTful con manejo de roles.</p>
@@ -351,18 +364,19 @@
                   class="project-link"
                 >
                   <i class="fab fa-github icon"></i>
-                  <span class="es">Ver en GitHub</span>
-                  <span class="en hidden">View on GitHub</span>
+                  <span class="es">GitHub</span>
+                  <span class="en hidden">GitHub</span>
                 </a>
                 <a
                   href="https://www.youtube.com/watch?v=HdM63BH0ssI"
                   target="_blank"
                   rel="noopener noreferrer"
                   class="project-link"
+                  title="Ver Demo del Sistema de Ventas (Backend y Frontend)"
                 >
                   <i class="fas fa-play icon"></i>
-                  <span class="es">Ver Demo</span>
-                  <span class="en hidden">View Demo</span>
+                  <span class="es">Demo</span>
+                  <span class="en hidden">Demo</span>
                 </a>
               </div>
             </div>
@@ -378,153 +392,19 @@
               <div class="project-links">
                 <a href="URL_GITHUB_PROYECTO_6" target="_blank" rel="noopener noreferrer" class="project-link">
                   <i class="fab fa-github icon"></i>
-                  <span class="es">Ver en GitHub</span>
-                  <span class="en hidden">View on GitHub</span>
+                  <span class="es">GitHub</span>
+                  <span class="en hidden">GitHub</span>
                 </a>
                 <a href="URL_VIDEO_YOUTUBE_PROYECTO_6" target="_blank" rel="noopener noreferrer" class="project-link">
                   <i class="fas fa-play icon"></i>
-                  <span class="es">Ver Demo</span>
-                  <span class="en hidden">View Demo</span>
-                </a>
-              </div>
-            </div>
-          </div>
-
-          <div class="swiper-slide project">
-            <img src="/images/proyecto7.png" alt="Proyecto 7">
-            <div class="project-info">
-              <p class="es">Descripción del Proyecto 7 en español.</p>
-              <p class="en hidden">Description of Project 7 in English.</p>
-              <div class="project-links">
-                <a href="URL_GITHUB_PROYECTO_7" target="_blank" rel="noopener noreferrer" class="project-link">
-                  <i class="fab fa-github icon"></i>
-                  <span class="es">Ver en GitHub</span>
-                  <span class="en hidden">View on GitHub</span>
-                </a>
-              </div>
-            </div>
-          </div>
-
-          <div class="swiper-slide project">
-            <img src="/images/proyecto8.png" alt="Proyecto 8">
-            <div class="project-info">
-              <p class="es">Descripción del Proyecto 8 en español.</p>
-              <p class="en hidden">Description of Project 8 in English.</p>
-              <div class="project-links">
-                <a href="URL_GITHUB_PROYECTO_8" target="_blank" rel="noopener noreferrer" class="project-link">
-                  <i class="fab fa-github icon"></i>
-                  <span class="es">Ver en GitHub</span>
-                  <span class="en hidden">View on GitHub</span>
-                </a>
-              </div>
-            </div>
-          </div>
-
-          <div class="swiper-slide project">
-            <img src="/images/proyecto9.png" alt="Proyecto 9">
-            <div class="project-info">
-              <p class="es">Descripción del Proyecto 9 en español.</p>
-              <p class="en hidden">Description of Project 9 in English.</p>
-              <div class="project-links">
-                <a href="URL_GITHUB_PROYECTO_9" target="_blank" rel="noopener noreferrer" class="project-link">
-                  <i class="fab fa-github icon"></i>
-                  <span class="es">Ver en GitHub</span>
-                  <span class="en hidden">View on GitHub</span>
-                </a>
-              </div>
-            </div>
-          </div>
-
-          <div class="swiper-slide project">
-            <img src="/images/proyecto10.png" alt="Proyecto 10">
-            <div class="project-info">
-              <p class="es">Descripción del Proyecto 10 en español.</p>
-              <p class="en hidden">Description of Project 10 in English.</p>
-              <div class="project-links">
-                <a href="URL_GITHUB_PROYECTO_10" target="_blank" rel="noopener noreferrer" class="project-link">
-                  <i class="fab fa-github icon"></i>
-                  <span class="es">Ver en GitHub</span>
-                  <span class="en hidden">View on GitHub</span>
-                </a>
-              </div>
-            </div>
-          </div>
-
-          <div class="swiper-slide project">
-            <img src="/images/proyecto11.png" alt="Proyecto 11">
-            <div class="project-info">
-              <p class="es">Descripción del Proyecto 11 en español.</p>
-              <p class="en hidden">Description of Project 11 in English.</p>
-              <div class="project-links">
-                <a href="URL_GITHUB_PROYECTO_11" target="_blank" rel="noopener noreferrer" class="project-link">
-                  <i class="fab fa-github icon"></i>
-                  <span class="es">Ver en GitHub</span>
-                  <span class="en hidden">View on GitHub</span>
-                </a>
-              </div>
-            </div>
-          </div>
-
-          <div class="swiper-slide project">
-            <img src="/images/proyecto12.png" alt="Proyecto 12">
-            <div class="project-info">
-              <p class="es">Descripción del Proyecto 12 en español.</p>
-              <p class="en hidden">Description of Project 12 in English.</p>
-              <div class="project-links">
-                <a href="URL_GITHUB_PROYECTO_12" target="_blank" rel="noopener noreferrer" class="project-link">
-                  <i class="fab fa-github icon"></i>
-                  <span class="es">Ver en GitHub</span>
-                  <span class="en hidden">View on GitHub</span>
-                </a>
-              </div>
-            </div>
-          </div>
-
-          <div class="swiper-slide project">
-            <img src="/images/proyecto13.png" alt="Proyecto 13">
-            <div class="project-info">
-              <p class="es">Descripción del Proyecto 13 en español.</p>
-              <p class="en hidden">Description of Project 13 in English.</p>
-              <div class="project-links">
-                <a href="URL_GITHUB_PROYECTO_13" target="_blank" rel="noopener noreferrer" class="project-link">
-                  <i class="fab fa-github icon"></i>
-                  <span class="es">Ver en GitHub</span>
-                  <span class="en hidden">View on GitHub</span>
-                </a>
-              </div>
-            </div>
-          </div>
-
-          <div class="swiper-slide project">
-            <img src="/images/proyecto14.png" alt="Proyecto 14">
-            <div class="project-info">
-              <p class="es">Descripción del Proyecto 14 en español.</p>
-              <p class="en hidden">Description of Project 14 in English.</p>
-              <div class="project-links">
-                <a href="URL_GITHUB_PROYECTO_14" target="_blank" rel="noopener noreferrer" class="project-link">
-                  <i class="fab fa-github icon"></i>
-                  <span class="es">Ver en GitHub</span>
-                  <span class="en hidden">View on GitHub</span>
-                </a>
-              </div>
-            </div>
-          </div>
-
-          <div class="swiper-slide project">
-            <img src="/images/proyecto15.png" alt="Proyecto 15">
-            <div class="project-info">
-              <p class="es">Descripción del Proyecto 15 en español.</p>
-              <p class="en hidden">Description of Project 15 in English.</p>
-              <div class="project-links">
-                <a href="URL_GITHUB_PROYECTO_15" target="_blank" rel="noopener noreferrer" class="project-link">
-                  <i class="fab fa-github icon"></i>
-                  <span class="es">Ver en GitHub</span>
-                  <span class="en hidden">View on GitHub</span>
+                  <span class="es">Demo</span>
+                  <span class="en hidden">Demo</span>
                 </a>
               </div>
             </div>
           </div>
           -->
+          <!-- Repetir estructura para proyectos 7 a 15 si los tienes -->
 
         </div>
         <!-- Paginación (opcional, bolitas indicadoras) -->
@@ -536,7 +416,10 @@
     </section> <!-- Fin de la sección Proyectos -->
 
     <!-- Sección de Contacto -->
-    <section id="contacto">
+    <section
+      id="contacto"
+      class="section-styled"
+    >
       <h2 class="es">Contacto</h2>
       <h2 class="en hidden">Contact</h2>
       <p class="es">Puedes contactarme directamente por correo electrónico o WhatsApp:</p>
