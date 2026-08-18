@@ -17,32 +17,32 @@ html {
 
 /* ======================================== */
 :root {
-  /* Tema Claro: Pastel con letra negra */
-  --bg-color: #F0F8FF; /* AliceBlue - un azul pastel muy claro */
-  --text-color: #2F4F4F; /* DarkSlateGray - un gris oscuro, casi negro */
-  --primary-color: #4682B4; /* SteelBlue - un azul acero para acentos */
-  --primary-hover-color: #41729F; /* Un SteelBlue un poco más oscuro */
-  --secondary-bg-color: #E6E6FA; /* Lavender - un lila pastel para elementos secundarios */
+  /* Tema Claro: Fondo suave con acento índigo vibrante */
+  --bg-color: #F4F6FB; /* Gris azulado muy claro */
+  --text-color: #1E293B; /* Slate oscuro - excelente legibilidad */
+  --primary-color: #6366F1; /* Indigo vibrante para acentos */
+  --primary-hover-color: #4F46E5; /* Indigo mas oscuro para hover */
+  --secondary-bg-color: #FFFFFF; /* Blanco puro para tarjetas/secciones */
   --button-text-color: #FFFFFF; /* Blanco para texto de botones */
   --border-color: var(--primary-color);
-  --box-shadow-color: rgba(0, 0, 0, 0.08);
-  --nav-toggle-hover-bg: #B0C4DE; /* LightSteelBlue para hover de toggles */
+  --box-shadow-color: rgba(15, 23, 42, 0.08);
+  --nav-toggle-hover-bg: #E0E7FF; /* Indigo muy claro para hover de toggles */
   /* --swiper-navigation-sides-offset: 15px; -- Comentado, se define en .swiper o media queries */
   --scroll-padding: 70px; /* Valor de fallback por si JS no establece la variable */
 }
 
 /* Definición de variables para el Modo Oscuro */
 [data-theme="dark"] {
-  /* Tema Oscuro: Azul marino con letra neón verde/amarilla */
-  --bg-color: #000080; /* Navy Blue - Azul Marino */
-  --text-color: #39FF14; /* Neon Green - Verde Neón para texto general */
-  --primary-color: #FFFF00; /* Neon Yellow - Amarillo Neón para acentos */
-  --primary-hover-color: #CCCC00; /* Un Amarillo Neón un poco más oscuro */
-  --secondary-bg-color: #000050; /* Un azul marino más oscuro para elementos secundarios */
-  --button-text-color: #000080; /* Azul Marino para texto de botones (contraste con amarillo) */
+  /* Tema Oscuro: Azul medianoche con acento cian vibrante */
+  --bg-color: #0A1128; /* Azul medianoche profundo */
+  --text-color: #E2E8F0; /* Blanco suave - comodo para leer (reemplaza el verde neon) */
+  --primary-color: #22D3EE; /* Cian vibrante para botones y enlaces */
+  --primary-hover-color: #0EA5E9; /* Cian mas oscuro para hover */
+  --secondary-bg-color: #101B35; /* Tarjetas ligeramente mas claras que el fondo */
+  --button-text-color: #082F49; /* Azul profundo sobre botones cian */
   --border-color: var(--primary-color);
-  --box-shadow-color: rgba(255, 255, 255, 0.08); /* Sombra clara para modo oscuro */
-  --nav-toggle-hover-bg: #0000CD; /* MediumBlue para hover de toggles */
+  --box-shadow-color: rgba(0, 0, 0, 0.5); /* Sombra profunda para modo oscuro */
+  --nav-toggle-hover-bg: #164E63; /* Cian oscuro para hover de toggles */
 }
 
 [data-theme="dark"] body {
