@@ -22,3 +22,9 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Instrucciones temporales de trabajo
+INSTRUCCIONES_PORTAFOLIO_CLAUDECODE.md
+
+# Configuración local de Claude Code
+.claude/
